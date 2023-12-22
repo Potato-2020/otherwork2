@@ -1,0 +1,775 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:binding="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.ibd.dipper.ui.taskResult.TaskResultViewModel" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/base_toolbar" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingBottom="0dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@{@string/str_orderid(viewModel.beanTaskDetail.id)}"
+                    android:textColor="#ff333333"
+                    android:textSize="12sp" />
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="10dp"
+                        android:text="@{@string/str_tmsOrderId(viewModel.beanTaskDetail.tmsOrderId)}"
+                        android:textColor="#ff333333"
+                        android:textSize="12sp"
+                        android:visibility="@{viewModel.beanTaskDetail.tmsOrderId==null ? View.GONE : View.VISIBLE}" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="16dp"
+                    android:background="@drawable/shape_white5"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:paddingBottom="16dp"
+                    android:visibility="@{viewModel.reasonShow ? View.VISIBLE : View.GONE}">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{viewModel.beanTaskDetail.checkStatusText}"
+                        android:textColor="#ff333333"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toTopOf="@+id/view12"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{viewModel.beanTaskDetail.ctime}"
+                        android:textColor="#ff333333"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toTopOf="@+id/view12"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <View
+                        android:id="@+id/view12"
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_marginTop="32dp"
+                        android:background="#EEEEEE"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:lineSpacingExtra="4dp"
+                        android:text="@{viewModel.strReason}"
+                        android:textColor="#ff333333"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/view12" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="16dp"
+                    android:background="@drawable/shape_white5"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="32dp"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="16dp"
+                        android:paddingRight="16dp"
+                        android:text="@{@string/str_goods(viewModel.beanTaskDetail.goods)}"
+                        android:textColor="#ff333333"
+                        android:textSize="12sp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginBottom="8dp"
+                        android:background="#EEEEEE" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingLeft="16dp"
+                        android:paddingTop="8dp"
+                        android:paddingRight="16dp"
+                        android:paddingBottom="6dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="发货单位："
+                            android:textColor="#ff187fc4"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="right"
+                            android:text="@{viewModel.beanTaskDetail.deliveryCompany}"
+                            android:textColor="#ff333333"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingLeft="16dp"
+                        android:paddingTop="8dp"
+                        android:paddingRight="16dp"
+                        android:paddingBottom="6dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="装货地："
+                            android:textColor="#ff187fc4"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="right"
+                            android:text="@{viewModel.beanTaskDetail.deliveryAddress}"
+                            android:textColor="#ff333333"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingLeft="16dp"
+                        android:paddingTop="8dp"
+                        android:paddingRight="16dp"
+                        android:paddingBottom="6dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="详细装货地址："
+                            android:textColor="#ff187fc4"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="right"
+                            android:text="@{viewModel.beanTaskDetail.deliveryAddressDetail}"
+                            android:textColor="#ff333333"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingLeft="16dp"
+                        android:paddingTop="8dp"
+                        android:paddingRight="16dp"
+                        android:paddingBottom="6dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="收货单位："
+                            android:textColor="#E89314"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="right"
+                            android:text="@{viewModel.beanTaskDetail.receivingCompany}"
+                            android:textColor="#ff333333"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingLeft="16dp"
+                        android:paddingTop="8dp"
+                        android:paddingRight="16dp"
+                        android:paddingBottom="6dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="卸货地："
+                            android:textColor="#E89314"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="right"
+                            android:text="@{viewModel.beanTaskDetail.receivingAddress}"
+                            android:textColor="#ff333333"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingLeft="16dp"
+                        android:paddingTop="8dp"
+                        android:paddingRight="16dp"
+                        android:paddingBottom="16dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="详细卸货地址："
+                            android:textColor="#E89314"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="right"
+                            android:text="@{viewModel.beanTaskDetail.receivingAddressDetail}"
+                            android:textColor="#ff333333"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="16dp"
+                    android:background="@drawable/shape_white5"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingLeft="16dp"
+                        android:paddingTop="12dp"
+                        android:paddingRight="16dp"
+                        android:paddingBottom="4dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="运单数量："
+                            android:textColor="#ff666666"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="right"
+                            android:text="@{viewModel.beanTaskDetail.dispatchQuantity}"
+                            android:textColor="#ff333333"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingLeft="16dp"
+                        android:paddingTop="4dp"
+                        android:paddingRight="16dp"
+                        android:paddingBottom="4dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="司机运费单价："
+                            android:textColor="#ff666666"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="right"
+                            android:text="@{@string/yuan_dun(viewModel.beanTaskDetail.unitFreight)}"
+                            android:textColor="#ff333333"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingLeft="16dp"
+                        android:paddingTop="4dp"
+                        android:paddingRight="16dp"
+                        android:paddingBottom="4dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="司机运费："
+                            android:textColor="#ff666666"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="right"
+                            android:text="@{@string/str_yuan(viewModel.beanTaskDetail.carriersFreight)}"
+                            android:textColor="#ff333333"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingLeft="16dp"
+                        android:paddingTop="4dp"
+                        android:paddingRight="16dp"
+                        android:paddingBottom="16dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="总价允许损耗："
+                            android:textColor="#ff666666"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="right"
+                            android:text="@{@string/str_percentage(viewModel.beanTaskDetail.allowableLoss)}"
+                            android:textColor="#ff333333"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="16dp"
+                    android:background="@drawable/shape_white5">
+
+                    <TextView
+                        android:id="@+id/textView71"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:text="装车"
+                        android:textColor="#ff666666"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toTopOf="@+id/view13"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <Button
+                        android:id="@+id/btn71"
+                        android:layout_width="56dp"
+                        android:layout_height="24dp"
+                        android:layout_marginStart="16dp"
+                        android:background="@drawable/shape_blue24"
+                        android:onClick="@{viewModel.editClick}"
+                        android:text="修改"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"
+                        android:visibility="@{viewModel.beanTaskDetail.checkStatus == 2 | viewModel.beanTaskDetail.checkStatus == 4 ? View.VISIBLE: View.GONE}"
+                        app:layout_constraintBottom_toBottomOf="@+id/textView71"
+                        app:layout_constraintStart_toEndOf="@+id/textView71"
+                        app:layout_constraintTop_toTopOf="@+id/textView71" />
+
+                    <ImageView
+                        android:id="@+id/imageView5"
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:layout_marginEnd="16dp"
+                        android:src="@mipmap/sanjiao_down"
+                        app:layout_constraintBottom_toTopOf="@+id/view13"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:text="@{viewModel.ctime0}"
+                        android:textColor="#ff333333"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toTopOf="@+id/view13"
+                        app:layout_constraintEnd_toStartOf="@+id/imageView5"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <View
+                        android:id="@+id/view13"
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_marginTop="40dp"
+                        android:background="#EEEEEE"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rcv0"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:visibility="@{viewModel.rcv0show ? View.VISIBLE : View.GONE}"
+                        app:layout_constraintTop_toBottomOf="@+id/view13"
+                        binding:itemBinding="@{viewModel.itemBinding0}"
+                        binding:items="@{viewModel.observableList0}" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="16dp"
+                    android:background="@drawable/shape_white5">
+
+                    <TextView
+                        android:id="@+id/textView72"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:text="起运"
+                        android:textColor="#ff666666"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toTopOf="@+id/view14"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <Button
+                        android:id="@+id/btn72"
+                        android:layout_width="56dp"
+                        android:layout_height="24dp"
+                        android:layout_marginStart="16dp"
+                        android:background="@drawable/shape_blue24"
+                        android:onClick="@{viewModel.editClick}"
+                        android:text="修改"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"
+                        android:visibility="@{viewModel.beanTaskDetail.checkStatus == 2 | viewModel.beanTaskDetail.checkStatus == 4 ? View.VISIBLE: View.GONE}"
+                        app:layout_constraintBottom_toBottomOf="@+id/textView72"
+                        app:layout_constraintStart_toEndOf="@+id/textView72"
+                        app:layout_constraintTop_toTopOf="@+id/textView72" />
+
+                    <ImageView
+                        android:id="@+id/imageView6"
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:layout_marginEnd="16dp"
+                        android:src="@mipmap/sanjiao_down"
+                        app:layout_constraintBottom_toTopOf="@+id/view14"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:text="@{viewModel.ctime1}"
+                        android:textColor="#ff333333"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toTopOf="@+id/view14"
+                        app:layout_constraintEnd_toStartOf="@+id/imageView6"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <View
+                        android:id="@+id/view14"
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_marginTop="40dp"
+                        android:background="#EEEEEE"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv0"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:gravity="center"
+                        android:text="@{viewModel.tvStr0}"
+                        android:textColor="#ff666666"
+                        android:textSize="12sp"
+                        android:visibility="@{viewModel.rcv1show ? View.VISIBLE : View.GONE}"
+                        app:layout_constraintStart_toStartOf="@+id/textView72"
+                        app:layout_constraintTop_toBottomOf="@+id/view14" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rcv1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:visibility="@{viewModel.rcv1show ? View.VISIBLE : View.GONE}"
+                        app:layout_constraintTop_toBottomOf="@+id/tv0"
+                        binding:itemBinding="@{viewModel.itemBinding1}"
+                        binding:items="@{viewModel.observableList1}" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="16dp"
+                    android:background="@drawable/shape_white5">
+
+                    <TextView
+                        android:id="@+id/textView73"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:text="卸货"
+                        android:textColor="#ff666666"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toTopOf="@+id/view15"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <Button
+                        android:id="@+id/btn73"
+                        android:layout_width="56dp"
+                        android:layout_height="24dp"
+                        android:layout_marginStart="16dp"
+                        android:background="@drawable/shape_blue24"
+                        android:onClick="@{viewModel.editClick}"
+                        android:text="修改"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"
+                        android:visibility="@{viewModel.beanTaskDetail.checkStatus == 2 | viewModel.beanTaskDetail.checkStatus == 4 ? View.VISIBLE: View.GONE}"
+                        app:layout_constraintBottom_toBottomOf="@+id/textView73"
+                        app:layout_constraintStart_toEndOf="@+id/textView73"
+                        app:layout_constraintTop_toTopOf="@+id/textView73" />
+
+                    <ImageView
+                        android:id="@+id/imageView7"
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:layout_marginEnd="16dp"
+                        android:src="@mipmap/sanjiao_down"
+                        app:layout_constraintBottom_toTopOf="@+id/view15"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:text="@{viewModel.ctime2}"
+                        android:textColor="#ff333333"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toTopOf="@+id/view15"
+                        app:layout_constraintEnd_toStartOf="@+id/imageView7"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <View
+                        android:id="@+id/view15"
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_marginTop="40dp"
+                        android:background="#EEEEEE"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rcv2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:visibility="@{viewModel.rcv2show ? View.VISIBLE : View.GONE}"
+                        app:layout_constraintTop_toBottomOf="@+id/view15"
+                        binding:itemBinding="@{viewModel.itemBinding2}"
+                        binding:items="@{viewModel.observableList2}" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="16dp"
+                    android:background="@drawable/shape_white5"
+                    android:paddingBottom="32dp">
+
+                    <TextView
+                        android:id="@+id/textView74"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:text="签收"
+                        android:textColor="#ff666666"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toTopOf="@+id/view16"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <Button
+                        android:id="@+id/btn74"
+                        android:layout_width="56dp"
+                        android:layout_height="24dp"
+                        android:layout_marginStart="16dp"
+                        android:background="@drawable/shape_blue24"
+                        android:onClick="@{viewModel.editClick}"
+                        android:text="修改"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"
+                        android:visibility="@{viewModel.beanTaskDetail.checkStatus == 2 | viewModel.beanTaskDetail.checkStatus == 4 ? View.VISIBLE: View.GONE}"
+                        app:layout_constraintBottom_toBottomOf="@+id/textView74"
+                        app:layout_constraintStart_toEndOf="@+id/textView74"
+                        app:layout_constraintTop_toTopOf="@+id/textView74" />
+
+                    <ImageView
+                        android:id="@+id/imageView8"
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:layout_marginEnd="16dp"
+                        android:src="@mipmap/sanjiao_down"
+                        app:layout_constraintBottom_toTopOf="@+id/view16"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:text="@{viewModel.ctime3}"
+                        android:textColor="#ff333333"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toTopOf="@+id/view16"
+                        app:layout_constraintEnd_toStartOf="@+id/imageView8"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <View
+                        android:id="@+id/view16"
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_marginTop="40dp"
+                        android:background="#EEEEEE"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:gravity="center"
+                        android:text="@{viewModel.tvStr1}"
+                        android:textColor="#ff666666"
+                        android:textSize="12sp"
+                        android:visibility="@{viewModel.rcv3show ? View.VISIBLE : View.GONE}"
+                        app:layout_constraintStart_toStartOf="@+id/textView74"
+                        app:layout_constraintTop_toBottomOf="@+id/view16" />
+
+                    <TextView
+                        android:id="@+id/tv2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:gravity="center"
+                        android:text="@{viewModel.tvStr2}"
+                        android:textColor="#ff666666"
+                        android:textSize="12sp"
+                        android:visibility="@{viewModel.rcv3show ? View.VISIBLE : View.GONE}"
+                        app:layout_constraintStart_toStartOf="@+id/tv1"
+                        app:layout_constraintTop_toBottomOf="@+id/tv1" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rcv3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:visibility="@{viewModel.rcv3show ? View.VISIBLE : View.GONE}"
+                        app:layout_constraintTop_toBottomOf="@+id/tv2"
+                        binding:itemBinding="@{viewModel.itemBinding3}"
+                        binding:items="@{viewModel.observableList3}" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="64dp"
+                    android:layout_marginRight="64dp"
+                    android:layout_marginBottom="64dp"
+                    android:background="@drawable/shape_blue24"
+                    android:gravity="center"
+                    android:onClick="@{viewModel.isresignClick}"
+                    android:text="重新签收"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:visibility="@{viewModel.isresign ? View.VISIBLE : View.GONE}" />
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </LinearLayout>
+</layout>

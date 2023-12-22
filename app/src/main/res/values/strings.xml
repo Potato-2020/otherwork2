@@ -1,0 +1,76 @@
+<resources>
+    <string name="app_name">北斗100司机端</string>
+    <string name="title">北斗</string>
+    <string name="login_str">登录</string>
+    <string name="regist_str">注册</string>
+    <string name="login_phone_str_hint">请输入用户名或登录手机号</string>
+    <string name="regist_phone_str_hint">请输入手机号</string>
+    <string name="code_str">获取验证码</string>
+    <string name="login_phone_psd">请输入登录密码</string>
+    <string name="regist_phone_code">请输入验证码</string>
+    <string name="forget_psd_str">忘记密码</string>
+    <string name="uncollected_details">未收款详情</string>
+    <string name="msg">消息</string>
+    <string name="driver_approve_str">司机认证</string>
+    <string name="car_approve_str">车辆认证</string>
+    <string name="car_approve_list_str">车辆认证列表</string>
+    <string name="my_wallet_str">我的钱包</string>
+    <string name="balance_str">余额</string>
+    <string name="balance_str_yuan">余额%1$s</string>
+    <string name="withdraw_str">提现</string>
+    <string name="income_str">提现</string>
+    <string name="withdraw_detail_str">明细</string>
+    <string name="bank_str">银行卡</string>
+    <string name="bank_new">添加银行卡</string>
+    <string name="check_code">验证手机号</string>
+    <string name="complaint_str">投诉</string>
+    <string name="online_str">在线支持</string>
+    <string name="online_feedback_str">在线反馈</string>
+    <string name="setting_str">设置</string>
+    <string name="account_str">账号与安全</string>
+    <string name="change_pad_str">修改密码</string>
+    <string name="about_str">关于我们</string>
+    <string name="xit_mechanism_str">退出机制公示</string>
+    <string name="legal_notices_str">法律声明</string>
+    <string name="privacy_policy">隐私政策</string>
+
+    <string name="send_code_befor">绑定银行卡需要短信确认，验证码已发送至手机： %1$s，请按显示操作。</string>
+    <string name="send_code">获取验证码</string>
+    <string name="Reacquire_after_S">%1$sS后重新获取</string>
+    <string name="Reacquire">重新获取</string>
+
+
+    <string name="main_orders">接单</string>
+    <string name="main_task">任务</string>
+    <string name="main_bill">账单</string>
+    <string name="main_mine">我的</string>
+    <string name="str_shiperName_shiperScore">%1$s（信誉分：%2$s）</string>
+    <string name="str_dun">%1$s</string>
+    <string name="str_gongli">%1$s公里</string>
+    <string name="str_yang">¥ %1$s</string>
+    <string name="str_yuan">%1$s元</string>
+    <string name="str_add_yuan">+%1$s元 | %2$s</string>
+    <string name="str_kg">%1$skg</string>
+    <string name="str_percentage">%1$s %%</string>
+    <string name="str_mi">%1$s</string>
+    <string name="str_orderid">运单号：%1$s</string>
+    <string name="str_tmsOrderId">商城订单号：%1$s</string>
+    <string name="str_goods">货品名称：%1$s</string>
+    <string name="have_code_str"><font color='#000000'>已有账号？</font><font color='#1E83C6'>登录</font></string>
+    <string name="yuan_str">¥ %1$s元</string>
+    <string name="yuan_dun">15元/吨</string>
+    <string name="str_et_max200">%1$s/200</string>
+    <string name="str_content">内容：%1$s</string>
+    <string name="str_balance_use">可用余额 %1$s 元</string>
+    <string name="no_read_msg_num">共有%1$s条消息未读</string>
+    <string name="read">已读</string>
+    <string name="unread">未读</string>
+    <string name="str_car_no">车牌号:%1$s</string>
+    <string name="str_system_version">系统版本号:%1$s</string>
+    <string name="str_app_version">app版本号:%1$s</string>
+    <string name="str_name_mobile">%1$s | %2$s</string>
+    <string name="str_fen">信誉分：%1$s</string>
+    <string name="str_denial_Reason">拒绝原因：%1$s</string>
+    <string name="str_zhuang">装车数量:</string>
+    <string name="str_feed_time">反馈时间：%1$s</string>
+</resources>

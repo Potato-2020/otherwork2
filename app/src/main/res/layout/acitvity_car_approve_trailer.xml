@@ -1,0 +1,490 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+         xmlns:binding="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+                name="viewModel"
+                type="com.ibd.dipper.ui.carApprove.CarApproveTrailerViewModel" />
+
+        <variable
+                name="viewModel2"
+                type="com.ibd.dipper.ui.carApprove.CarApproveViewModel" />
+        <import type="android.view.View" />
+    </data>
+
+<!--    <androidx.cardview.widget.CardView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginLeft="16dp"-->
+<!--            android:layout_marginTop="16dp"-->
+<!--            android:layout_marginRight="16dp"-->
+<!--            android:layout_marginBottom="2dp"-->
+<!--            app:cardCornerRadius="8dp"-->
+<!--            app:cardElevation="2dp">-->
+
+<!--        <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content">-->
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#F6F6F6"
+            android:orientation="vertical"
+            android:id="@+id/trailer_item"
+            >
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:background="#eeeeee"
+                     />
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:orientation="horizontal"
+                    >
+
+                <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                >
+
+                    <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="91dp"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="8dp"
+                            android:onClick="@{viewModel.phoneTypeClick3}"
+                            android:scaleType="centerCrop"
+                            android:src="@mipmap/rz6_icon3"
+                            android:id="@+id/trailerLicenseAuxiliaryFrontPhoto"
+                            binding:url="@{viewModel.trailerLicenseAuxiliaryFrontPhoto}" />
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="6dp"
+                            android:text="挂车行驶证正页图片"
+                            android:textColor="#ff333333"
+                            android:textSize="12sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                    <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="91dp"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginRight="16dp"
+                            android:scaleType="fitXY"
+                            android:src="@mipmap/icon_example0" />
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="6dp"
+                            android:text="挂车行驶证正页图片（示例）"
+                            android:textColor="#ff333333"
+                            android:textSize="12sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:orientation="horizontal"
+                    >
+
+                <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                    <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="91dp"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="8dp"
+                            android:onClick="@{viewModel.phoneTypeClick4}"
+                            android:scaleType="centerCrop"
+                            android:src="@mipmap/rz6_icon3"
+                            android:id="@+id/trailerLicenseAuxiliaryBackPhoto"
+                            binding:url="@{viewModel.trailerLicenseAuxiliaryBackPhoto}" />
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="6dp"
+                            android:text="挂车行驶证副页图片"
+                            android:textColor="#ff333333"
+                            android:textSize="12sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                    <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="91dp"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginRight="16dp"
+                            android:scaleType="fitXY"
+                            android:src="@mipmap/icon_example1" />
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="6dp"
+                            android:text="挂车行驶证副页图片（示例）"
+                            android:textColor="#ff333333"
+                            android:textSize="12sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:background="#eeeeee"
+                     />
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:visibility="gone"
+            >
+                <EditText
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:hint="请输入挂车牌照号码"
+                        android:inputType="textEmailAddress"
+                        android:singleLine="true"
+                        android:id="@+id/id"
+                        android:text="@={viewModel.id}"
+
+                        android:textSize="15sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    >
+                <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:text="挂车牌照"
+                        android:textColor="#ff333333"
+                        android:textSize="15sp" />
+
+                <EditText
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@color/picture_color_transparent"
+                        android:gravity="center_vertical|right"
+                        android:hint="请输入挂车牌照号码"
+                        android:inputType="textEmailAddress"
+                        android:singleLine="true"
+                        android:id="@+id/trailerLicensePlate"
+                        android:maxLength="20"
+                        android:text="@={viewModel.trailerLicensePlate}"
+                        android:textColor="@color/black"
+                        android:textSize="15sp" />
+
+                <ImageView
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:layout_marginLeft="24dp"
+                        android:src="@mipmap/you"
+                        android:visibility="invisible" />
+            </LinearLayout>
+
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:background="#eeeeee"
+                     />
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    >
+
+                <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:text="挂车载重量"
+                        android:textColor="#ff333333"
+                        android:textSize="15sp" />
+
+                <EditText
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@color/picture_color_transparent"
+                        android:gravity="center_vertical|right"
+                        android:hint="请输入挂车载重量"
+                        android:inputType="numberDecimal"
+                        android:singleLine="true"
+                        android:id="@+id/trailerLoads"
+                        android:maxLength="8"
+                        android:text="@={viewModel.trailerLoads}"
+                        android:textColor="@color/black"
+                        android:textSize="15sp" />
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="18dp"
+                        android:text="kg"
+                        android:textColor="#ff333333"
+                        android:textSize="15sp" />
+            </LinearLayout>
+
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:background="#eeeeee"
+                     />
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    >
+
+                <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:text="挂车长度"
+                        android:textColor="#ff333333"
+                        android:textSize="15sp" />
+
+                <EditText
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@color/picture_color_transparent"
+                        android:gravity="center_vertical|right"
+                        android:hint="请输入挂车长度"
+                        android:inputType="numberDecimal"
+                        android:singleLine="true"
+                        android:id="@+id/trailerLength"
+                        android:maxLength="8"
+                        android:text="@={viewModel.trailerLength}"
+                        android:textColor="@color/black"
+                        android:textSize="15sp" />
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="18dp"
+                        android:text="mm"
+                        android:textColor="#ff333333"
+                        android:textSize="15sp" />
+            </LinearLayout>
+
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:background="#eeeeee"
+                     />
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    >
+
+                <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:text="挂车宽度"
+                        android:textColor="#ff333333"
+                        android:textSize="15sp" />
+
+                <EditText
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@color/picture_color_transparent"
+                        android:gravity="center_vertical|right"
+                        android:hint="请输入挂车宽度"
+                        android:inputType="numberDecimal"
+                        android:singleLine="true"
+                        android:id="@+id/trailerWidth"
+                        android:maxLength="8"
+                        android:text="@={viewModel.trailerWidth}"
+                        android:textColor="@color/black"
+                        android:textSize="15sp" />
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="18dp"
+                        android:text="mm"
+                        android:textColor="#ff333333"
+                        android:textSize="15sp" />
+            </LinearLayout>
+
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:background="#eeeeee"
+                     />
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    >
+
+                <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:text="挂车高度"
+                        android:textColor="#ff333333"
+                        android:textSize="15sp" />
+
+                <EditText
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@color/picture_color_transparent"
+                        android:gravity="center_vertical|right"
+                        android:hint="请输入挂车高度"
+                        android:inputType="numberDecimal"
+                        android:singleLine="true"
+                        android:id="@+id/trailerHeight"
+                        android:maxLength="8"
+                        android:text="@={viewModel.trailerHeight}"
+                        android:textColor="@color/black"
+                        android:textSize="15sp" />
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="18dp"
+                        android:text="mm"
+                        android:textColor="#ff333333"
+                        android:textSize="15sp" />
+            </LinearLayout>
+
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:background="#eeeeee"
+                     />
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    >
+
+                <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:text="挂车总质量"
+                        android:textColor="#ff333333"
+                        android:textSize="15sp" />
+
+                <EditText
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@color/picture_color_transparent"
+                        android:gravity="center_vertical|right"
+                        android:hint="请输入挂车总质量"
+                        android:inputType="numberDecimal"
+                        android:singleLine="true"
+                        android:id="@+id/trailerTotalMass"
+                        android:maxLength="8"
+                        android:text="@={viewModel.trailerTotalMass}"
+                        android:textColor="@color/black"
+                        android:textSize="15sp" />
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="18dp"
+                        android:text="kg"
+                        android:textColor="#ff333333"
+                        android:textSize="15sp" />
+            </LinearLayout>
+
+    </LinearLayout>
+<!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
+<!--    </androidx.cardview.widget.CardView>-->
+</layout>

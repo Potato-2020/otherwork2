@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginLeft="32dp"
+    android:layout_marginRight="32dp"
+    android:orientation="vertical"
+    app:cardBackgroundColor="#efefef"
+    app:cardCornerRadius="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:gravity="center"
+            android:text="标题"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout5"
+            android:layout_width="match_parent"
+            android:layout_height="244dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/shape_white5">
+
+            <EditText
+                android:id="@+id/et_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/picture_color_transparent"
+                android:gravity="top"
+                android:maxLength="250"
+                android:padding="8dp"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:orientation="horizontal"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="运输速度"
+                        android:textColor="@color/black"
+                        android:textSize="12sp" />
+
+                    <RadioGroup
+                        android:id="@+id/radio_group0"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingLeft="8dp"
+                        android:paddingRight="8dp">
+
+                        <RadioButton
+                            android:id="@+id/rb00"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:button="@drawable/selector_radio_check"
+                            android:gravity="center"
+                            android:text="1分"
+                            android:textColor="@color/black"
+                            android:textSize="12sp" />
+
+                        <RadioButton
+                            android:id="@+id/rb01"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:button="@drawable/selector_radio_check"
+                            android:gravity="center"
+                            android:text="2分"
+                            android:textColor="@color/black"
+                            android:textSize="12sp" />
+
+                        <RadioButton
+                            android:id="@+id/rb02"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:button="@drawable/selector_radio_check"
+                            android:gravity="center"
+                            android:text="3分"
+                            android:textColor="@color/black"
+                            android:textSize="12sp" />
+
+                        <RadioButton
+                            android:id="@+id/rb03"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:button="@drawable/selector_radio_check"
+                            android:gravity="center"
+                            android:text="4分"
+                            android:textColor="@color/black"
+                            android:textSize="12sp" />
+
+                        <RadioButton
+                            android:id="@+id/rb04"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:button="@drawable/selector_radio_check"
+                            android:gravity="center"
+                            android:text="5分"
+                            android:textColor="@color/black"
+                            android:textSize="12sp" />
+                    </RadioGroup>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:orientation="horizontal"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="货物安全"
+                        android:textColor="@color/black"
+                        android:textSize="12sp" />
+
+                    <RadioGroup
+                        android:id="@+id/radio_group1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingLeft="8dp"
+                        android:paddingRight="8dp">
+
+                        <RadioButton
+                            android:id="@+id/rb10"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:button="@drawable/selector_radio_check"
+                            android:gravity="center"
+                            android:text="1分"
+                            android:textColor="@color/black"
+                            android:textSize="12sp" />
+
+                        <RadioButton
+                            android:id="@+id/rb11"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:button="@drawable/selector_radio_check"
+                            android:gravity="center"
+                            android:text="2分"
+                            android:textColor="@color/black"
+                            android:textSize="12sp" />
+
+                        <RadioButton
+                            android:id="@+id/rb12"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:button="@drawable/selector_radio_check"
+                            android:gravity="center"
+                            android:text="3分"
+                            android:textColor="@color/black"
+                            android:textSize="12sp" />
+
+                        <RadioButton
+                            android:id="@+id/rb13"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:button="@drawable/selector_radio_check"
+                            android:gravity="center"
+                            android:text="4分"
+                            android:textColor="@color/black"
+                            android:textSize="12sp" />
+
+                        <RadioButton
+                            android:id="@+id/rb14"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:button="@drawable/selector_radio_check"
+                            android:gravity="center"
+                            android:text="5分"
+                            android:textColor="@color/black"
+                            android:textSize="12sp" />
+                    </RadioGroup>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:orientation="horizontal"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="工作规范"
+                        android:textColor="@color/black"
+                        android:textSize="12sp" />
+
+                    <RadioGroup
+                        android:id="@+id/radio_group2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingLeft="8dp"
+                        android:paddingRight="8dp">
+
+                        <RadioButton
+                            android:id="@+id/rb20"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:button="@drawable/selector_radio_check"
+                            android:gravity="center"
+                            android:text="1分"
+                            android:textColor="@color/black"
+                            android:textSize="12sp" />
+
+                        <RadioButton
+                            android:id="@+id/rb21"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:button="@drawable/selector_radio_check"
+                            android:gravity="center"
+                            android:text="2分"
+                            android:textColor="@color/black"
+                            android:textSize="12sp" />
+
+                        <RadioButton
+                            android:id="@+id/rb22"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:button="@drawable/selector_radio_check"
+                            android:gravity="center"
+                            android:text="3分"
+                            android:textColor="@color/black"
+                            android:textSize="12sp" />
+
+                        <RadioButton
+                            android:id="@+id/rb23"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:button="@drawable/selector_radio_check"
+                            android:gravity="center"
+                            android:text="4分"
+                            android:textColor="@color/black"
+                            android:textSize="12sp" />
+
+                        <RadioButton
+                            android:id="@+id/rb24"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:button="@drawable/selector_radio_check"
+                            android:gravity="center"
+                            android:text="5分"
+                            android:textColor="@color/black"
+                            android:textSize="12sp" />
+                    </RadioGroup>
+
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:orientation="horizontal"
+                        android:paddingLeft="8dp"
+                        android:paddingRight="8dp">
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="服务态度"
+                            android:textColor="@color/black"
+                            android:textSize="12sp" />
+
+                    <RadioGroup
+                            android:id="@+id/radio_group3"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingLeft="8dp"
+                            android:paddingRight="8dp">
+
+                        <RadioButton
+                                android:id="@+id/rb30"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:button="@drawable/selector_radio_check"
+                                android:gravity="center"
+                                android:text="1分"
+                                android:textColor="@color/black"
+                                android:textSize="12sp" />
+
+                        <RadioButton
+                                android:id="@+id/rb31"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:button="@drawable/selector_radio_check"
+                                android:gravity="center"
+                                android:text="2分"
+                                android:textColor="@color/black"
+                                android:textSize="12sp" />
+
+                        <RadioButton
+                                android:id="@+id/rb32"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:button="@drawable/selector_radio_check"
+                                android:gravity="center"
+                                android:text="3分"
+                                android:textColor="@color/black"
+                                android:textSize="12sp" />
+
+                        <RadioButton
+                                android:id="@+id/rb33"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:button="@drawable/selector_radio_check"
+                                android:gravity="center"
+                                android:text="4分"
+                                android:textColor="@color/black"
+                                android:textSize="12sp" />
+
+                        <RadioButton
+                                android:id="@+id/rb34"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:button="@drawable/selector_radio_check"
+                                android:gravity="center"
+                                android:text="5分"
+                                android:textColor="@color/black"
+                                android:textSize="12sp" />
+                    </RadioGroup>
+
+                </LinearLayout>
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:orientation="horizontal"
+                        android:paddingLeft="8dp"
+                        android:paddingRight="8dp">
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="司机态度"
+                            android:textColor="@color/black"
+                            android:textSize="12sp" />
+
+                    <RadioGroup
+                            android:id="@+id/radio_group4"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingLeft="8dp"
+                            android:paddingRight="8dp">
+
+                        <RadioButton
+                                android:id="@+id/rb40"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:button="@drawable/selector_radio_check"
+                                android:gravity="center"
+                                android:text="1分"
+                                android:textColor="@color/black"
+                                android:textSize="12sp" />
+
+                        <RadioButton
+                                android:id="@+id/rb41"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:button="@drawable/selector_radio_check"
+                                android:gravity="center"
+                                android:text="2分"
+                                android:textColor="@color/black"
+                                android:textSize="12sp" />
+
+                        <RadioButton
+                                android:id="@+id/rb42"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:button="@drawable/selector_radio_check"
+                                android:gravity="center"
+                                android:text="3分"
+                                android:textColor="@color/black"
+                                android:textSize="12sp" />
+
+                        <RadioButton
+                                android:id="@+id/rb43"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:button="@drawable/selector_radio_check"
+                                android:gravity="center"
+                                android:text="4分"
+                                android:textColor="@color/black"
+                                android:textSize="12sp" />
+
+                        <RadioButton
+                                android:id="@+id/rb44"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:button="@drawable/selector_radio_check"
+                                android:gravity="center"
+                                android:text="5分"
+                                android:textColor="@color/black"
+                                android:textSize="12sp" />
+                    </RadioGroup>
+
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/tv_done"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/shape_blue24"
+            android:gravity="center"
+            android:text="提交"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,631 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.ibd.dipper.ui.ordersDetail.OrdersDetailViewModel" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical"
+        tools:context=".ui.MainActivity">
+
+
+        <include
+            android:id="@+id/include"
+            layout="@layout/base_toolbar" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" tools:layout_editor_absoluteY="48dp">
+
+            <TextView
+                    android:id="@+id/textView9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="13dp"
+                    android:paddingRight="16dp"
+                    android:paddingBottom="13dp"
+                    android:text="@{@string/str_shiperName_shiperScore(viewModel.beanOrdersDetail.shiperName,viewModel.beanOrdersDetail.shiperScore)}"
+                    android:textColor="#ff000000"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+            <View
+                    android:id="@+id/view7"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="#E5E5E5"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView9"/>
+
+            <TextView
+                    android:id="@+id/textView10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="货品名称："
+                    android:textColor="#666666"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="@+id/view7"
+                    app:layout_constraintTop_toBottomOf="@+id/view7"/>
+
+            <TextView
+                    android:id="@+id/textView60"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{viewModel.beanOrdersDetail.goods}"
+                    android:textColor="#333333"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView10"
+                    app:layout_constraintStart_toEndOf="@+id/textView10"
+                    app:layout_constraintTop_toTopOf="@+id/textView10"/>
+
+            <TextView
+                    android:id="@+id/textView11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@{viewModel.beanOrdersDetail.dispatchQuantity}"
+                    android:textColor="#333333"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="@+id/view7"
+                    app:layout_constraintTop_toBottomOf="@+id/view7"/>
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="订单数量："
+                    android:textColor="#666666"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toStartOf="@+id/textView11"
+                    app:layout_constraintTop_toBottomOf="@+id/view7"/>
+
+            <TextView
+                    android:id="@+id/textView12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:text="运输里程："
+                    android:textColor="#666666"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="@+id/textView10"
+                    app:layout_constraintTop_toBottomOf="@+id/textView10"/>
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{viewModel.beanOrdersDetail.transporMileage}"
+                    android:textColor="#333333"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView12"
+                    app:layout_constraintStart_toEndOf="@+id/textView12"
+                    app:layout_constraintTop_toTopOf="@+id/textView12"/>
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:text="司机运费："
+                    android:textColor="#666666"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toStartOf="@+id/textView62"
+                    app:layout_constraintTop_toBottomOf="@+id/textView11"/>
+
+            <TextView
+                    android:id="@+id/textView62"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:text="@{viewModel.beanOrdersDetail.carriersFreight}"
+                    android:textColor="#333333"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="@+id/textView11"
+                    app:layout_constraintTop_toBottomOf="@+id/textView11"/>
+
+            <View
+                    android:id="@+id/view6"
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:layout_marginTop="16dp"
+                    android:background="#F6F6F6"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView12"/>
+
+            <RelativeLayout
+                    android:id="@+id/relativeLayout2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/view6">
+
+                <TextView
+                        android:id="@+id/textView13"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="42dp"
+                        android:layout_marginTop="16dp"
+                        android:lineSpacingExtra="4dp"
+                        android:text="发货单位："
+                        android:textColor="#666666"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toStartOf="parent"/>
+
+                <TextView
+                        android:id="@+id/textView50"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@+id/textView13"
+                        android:layout_toRightOf="@+id/textView13"
+                        android:paddingRight="16dp"
+                        android:text="@{viewModel.beanOrdersDetail.deliveryCompany}"
+                        android:textColor="#333333"
+                        android:textSize="12sp"/>
+
+                <TextView
+                        android:id="@+id/textView14"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/textView50"
+                        android:layout_marginLeft="42dp"
+                        android:layout_marginTop="6dp"
+                        android:lineSpacingExtra="4dp"
+                        android:text="发货地址："
+                        android:textColor="#666666"
+                        android:textSize="12sp"/>
+
+                <TextView
+                        android:id="@+id/textView51"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@+id/textView14"
+                        android:layout_toRightOf="@+id/textView14"
+                        android:lineSpacingExtra="4dp"
+                        android:paddingRight="16dp"
+                        android:text="@{viewModel.beanOrdersDetail.deliveryAddress}"
+                        android:textColor="#333333"
+                        android:textSize="12sp"/>
+
+                <TextView
+                        android:id="@+id/textView15"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/textView14"
+                        android:layout_marginStart="42dp"
+                        android:layout_marginTop="8dp"
+                        android:text="发货联系人： "
+                        android:textColor="#666666"
+                        android:textSize="12sp"/>
+
+                <TextView
+                        android:id="@+id/textView52"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@+id/textView15"
+                        android:layout_toRightOf="@+id/textView15"
+                        android:text="@{viewModel.beanOrdersDetail.deliveryContacts}"
+                        android:textColor="#333333"
+                        android:textSize="12sp"/>
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/textView14"
+                        android:layout_alignTop="@+id/textView53"
+                        android:layout_toLeftOf="@+id/textView53"
+                        android:text="发货联系人电话："
+                        android:textColor="#666666"
+                        android:textSize="12sp"/>
+
+                <TextView
+                        android:id="@+id/textView53"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/textView14"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:text="@{viewModel.beanOrdersDetail.deliveryContactsMobile}"
+                        android:textColor="#333333"
+                        android:textSize="12sp"/>
+
+                <View
+                        android:id="@+id/view8"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_below="@+id/textView15"
+                        android:layout_marginStart="32dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="#F6F6F6"/>
+
+                <TextView
+                        android:id="@+id/textView16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/view8"
+                        android:layout_marginStart="42dp"
+                        android:layout_marginTop="16dp"
+                        android:text="收货单位："
+                        android:textColor="#666666"
+                        android:textSize="12sp"/>
+
+                <TextView
+                        android:id="@+id/textView54"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@+id/textView16"
+                        android:layout_toRightOf="@+id/textView16"
+                        android:paddingRight="16dp"
+                        android:text="@{viewModel.beanOrdersDetail.receivingCompany}"
+                        android:textColor="#333333"
+                        android:textSize="12sp"/>
+
+                <TextView
+                        android:id="@+id/textView17"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/textView54"
+                        android:layout_marginStart="42dp"
+                        android:layout_marginTop="8dp"
+                        android:text="收货地址："
+                        android:textColor="#666666"
+                        android:textSize="12sp"/>
+
+                <TextView
+                        android:id="@+id/textView55"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@+id/textView17"
+                        android:layout_toRightOf="@+id/textView17"
+                        android:paddingRight="16dp"
+                        android:text="@{viewModel.beanOrdersDetail.receivingAddress}"
+                        android:textColor="#333333"
+                        android:textSize="12sp"/>
+
+                <TextView
+                        android:id="@+id/textView18"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/textView55"
+                        android:layout_marginStart="42dp"
+                        android:layout_marginTop="8dp"
+                        android:text="收货联系人： "
+                        android:textColor="#666666"
+                        android:textSize="12sp"/>
+
+                <TextView
+                        android:id="@+id/textView56"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@+id/textView18"
+                        android:layout_toRightOf="@+id/textView18"
+                        android:text="@{viewModel.beanOrdersDetail.receivingContacts}"
+                        android:textColor="#333333"
+                        android:textSize="12sp"/>
+
+                <TextView
+                        android:id="@+id/textView57"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@+id/textView58"
+                        android:layout_toLeftOf="@+id/textView58"
+                        android:text="发货联系人电话："
+                        android:textColor="#666666"
+                        android:textSize="12sp"/>
+
+                <TextView
+                        android:id="@+id/textView58"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/textView17"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginRight="16dp"
+                        android:text="@{viewModel.beanOrdersDetail.receivingContactsMobile}"
+                        android:textColor="#333333"
+                        android:textSize="12sp"/>
+
+                <LinearLayout
+                        android:layout_width="12dp"
+                        android:layout_height="wrap_content"
+                        android:layout_above="@+id/textView18"
+                        android:layout_below="@+id/textView13"
+                        android:layout_marginLeft="16dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                    <ImageView
+                            android:layout_width="12dp"
+                            android:layout_height="12dp"
+                            android:src="@mipmap/sy_icon8"/>
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:text=".\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n."
+                            android:textColor="@color/black"
+                            android:textSize="12sp"/>
+
+                    <ImageView
+                            android:layout_width="12dp"
+                            android:layout_height="12dp"
+                            android:src="@mipmap/sy_icon9"/>
+                </LinearLayout>
+
+                <View
+                        android:id="@+id/view9"
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp"
+                        android:layout_below="@id/textView18"
+                        android:layout_marginTop="16dp"
+                        android:background="#F6F6F6"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                    android:id="@+id/relativeLayout3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/relativeLayout2">
+                <TextView
+                        android:id="@+id/textView19"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:text="允许损耗："
+                        android:textColor="#666666"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toStartOf="parent"/>
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="@{@string/str_percentage(viewModel.beanOrdersDetail.allowableLoss)}"
+                        android:textColor="#333333"
+                        android:textSize="12sp"
+                        android:layout_toRightOf="@id/textView19"/>
+
+                <TextView
+                        android:id="@+id/textView20"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginStart="16dp"
+                        android:text="订单号："
+                        android:textColor="#666666"
+                        android:textSize="12sp"
+                        android:layout_below="@+id/textView19"/>
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{viewModel.beanOrdersDetail.id}"
+                        android:textColor="#333333"
+                        android:textSize="12sp"
+                        android:layout_toRightOf="@id/textView20"
+                        android:layout_alignTop="@id/textView20"/>
+
+                <TextView
+                        android:id="@+id/textView26"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginStart="16dp"
+                        android:text="商城订单号："
+                        android:textColor="#666666"
+                        android:textSize="12sp"
+                        android:layout_below="@+id/textView20"/>
+
+                <TextView
+                        android:id="@+id/textView266"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{viewModel.beanOrdersDetail.tmsOrderId}"
+                        android:textColor="#333333"
+                        android:textSize="12sp"
+                        android:layout_toRightOf="@id/textView26"
+                        android:layout_alignTop="@id/textView26"/>
+
+                <TextView
+                        android:id="@+id/textView21"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginStart="16dp"
+                        android:text="车型："
+                        android:textColor="#666666"
+                        android:textSize="12sp"
+                        android:layout_below="@+id/textView26"/>
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{viewModel.beanOrdersDetail.vehicleType}"
+                        android:textColor="#333333"
+                        android:textSize="12sp"
+                        android:layout_toRightOf="@id/textView21"
+                        android:layout_alignTop="@id/textView21"/>
+
+                <TextView
+                        android:id="@+id/textView22"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginStart="16dp"
+                        android:text="载重："
+                        android:textColor="#333333"
+                        android:textSize="12sp"
+                        android:layout_below="@+id/textView21"/>
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{@string/str_dun(viewModel.beanOrdersDetail.loadsRequirement)}"
+                        android:textColor="#333333"
+                        android:textSize="12sp"
+                        android:layout_toRightOf="@id/textView22"
+                        android:layout_alignTop="@id/textView22"/>
+
+                <TextView
+                        android:id="@+id/textView23"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginStart="16dp"
+                        android:text="车长："
+                        android:textColor="#666666"
+                        android:textSize="12sp"
+                        android:layout_below="@+id/textView22"/>
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{@string/str_mi(viewModel.beanOrdersDetail.vehicleLength)}"
+                        android:textColor="#333333"
+                        android:textSize="12sp"
+                        android:layout_toRightOf="@id/textView23"
+                        android:layout_alignTop="@id/textView23"/>
+
+                <TextView
+                        android:id="@+id/textView24"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginStart="16dp"
+                        android:text="车宽："
+                        android:textColor="#666666"
+                        android:textSize="12sp"
+                        android:layout_below="@+id/textView23"/>
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{@string/str_mi(viewModel.beanOrdersDetail.vehicleWidth)}"
+                        android:textColor="#333333"
+                        android:textSize="12sp"
+                        android:layout_toRightOf="@id/textView24"
+                        android:layout_alignTop="@id/textView24"/>
+
+                <TextView
+                        android:id="@+id/textView25"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginStart="16dp"
+                        android:text="轴数："
+                        android:textColor="#666666"
+                        android:textSize="12sp"
+                        android:layout_below="@+id/textView24"/>
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{viewModel.beanOrdersDetail.axlesNumber}"
+                        android:textColor="#333333"
+                        android:textSize="12sp"
+                        android:layout_toRightOf="@id/textView25"
+                        android:layout_alignTop="@id/textView25"/>
+            </RelativeLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="#F6F6F6"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            android:visibility="@{viewModel.type == 0? View.VISIBLE : View.GONE}"
+            app:layout_constraintTop_toBottomOf="@+id/textView25">
+
+            <TextView
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="3dp"
+                android:background="@drawable/shape_blue1_18"
+                android:gravity="center"
+                android:onClick="@{viewModel.refuseClick}"
+                android:paddingLeft="36dp"
+                android:paddingTop="12dp"
+                android:paddingRight="36dp"
+                android:paddingBottom="12dp"
+                android:text="拒绝"
+                android:textColor="#187fc4"
+                android:textSize="15sp"
+                android:visibility="@{viewModel.status == 0 ? View.VISIBLE : View.GONE}" />
+
+            <TextView
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:background="@drawable/shape_blue2_18"
+                android:gravity="center"
+                android:onClick="@{viewModel.ordersClick}"
+                android:paddingLeft="36dp"
+                android:paddingTop="12dp"
+                android:paddingRight="36dp"
+                android:paddingBottom="12dp"
+                android:text="@{viewModel.statusStr}"
+                android:textColor="#ffffff"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#F6F6F6"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            android:visibility="@{viewModel.type == 1? View.VISIBLE : View.GONE}"
+            app:layout_constraintTop_toBottomOf="@+id/textView25">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <TextView
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_blue2_18"
+                android:gravity="center"
+                android:onClick="@{viewModel.grabOrdersClick}"
+                android:paddingLeft="36dp"
+                android:paddingTop="12dp"
+                android:paddingRight="36dp"
+                android:paddingBottom="12dp"
+                android:text="@{viewModel.biddingStatusStr}"
+                android:textColor="#ffffff"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+</layout>

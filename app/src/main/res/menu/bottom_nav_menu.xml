@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_info"
+        android:icon="@drawable/icon_selector_orders"
+        android:title="@string/main_orders" />
+
+    <item
+        android:id="@+id/navigation_assets"
+        android:icon="@drawable/icon_selector_task"
+        android:title="@string/main_task" />
+
+    <item
+        android:id="@+id/navigation_market"
+        android:icon="@drawable/icon_selector_bill"
+        android:title="@string/main_bill" />
+    <item
+        android:id="@+id/navigation_contract"
+        android:icon="@drawable/icon_selector_mine"
+        android:title="@string/main_mine" />
+</menu>

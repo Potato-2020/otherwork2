@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.ibd.dipper.ui.msg.MsgViewModel" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F6F6F6"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/include"
+            layout="@layout/base_toolbar" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:background="#EEEEEE"
+            android:gravity="center_vertical"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:text="@{@string/no_read_msg_num(viewModel.beanMsg.unread)}"
+            android:textColor="#ff666666"
+            android:textSize="12sp" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{viewModel.click}"
+            android:paddingLeft="16dp"
+            android:paddingTop="12dp"
+            android:paddingRight="16dp"
+            android:paddingBottom="12dp">
+
+
+            <ImageView
+                android:id="@+id/imageView9"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:src="@mipmap/xx4_icon1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <TextView
+                android:id="@+id/textView39"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginBottom="2dp"
+                android:text="系统通知"
+                android:textColor="#ff333333"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toTopOf="@+id/guideline4"
+                app:layout_constraintStart_toEndOf="@+id/imageView9" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:text="@{viewModel.beanMsg.noticeTime}"
+                android:textColor="#ff333333"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/textView39"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textView39" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="2dp"
+                android:text="@{viewModel.beanMsg.noticeContent}"
+                android:textColor="#ff666666"
+                android:textSize="12sp"
+                app:layout_constraintStart_toEndOf="@+id/imageView9"
+                app:layout_constraintTop_toTopOf="@+id/guideline4" />
+
+            <View
+                android:layout_width="6dp"
+                android:layout_height="6dp"
+                android:background="@drawable/shape_red5"
+                android:visibility="@{viewModel.beanMsg.noticeUnread == 1 ? View.VISIBLE :View.GONE}"
+                app:layout_constraintEnd_toEndOf="@+id/imageView9"
+                app:layout_constraintTop_toTopOf="@+id/imageView9" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{viewModel.click}"
+            android:paddingLeft="16dp"
+            android:paddingTop="12dp"
+            android:paddingRight="16dp"
+            android:paddingBottom="12dp">
+
+
+            <ImageView
+                android:id="@+id/imageView99"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:src="@mipmap/xx4_icon2"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline44"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <TextView
+                android:id="@+id/textView399"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginBottom="2dp"
+                android:text="货主评价"
+                android:textColor="#ff333333"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toTopOf="@+id/guideline44"
+                app:layout_constraintStart_toEndOf="@+id/imageView99" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:text="@{viewModel.beanMsg.evaluateTime}"
+                android:textColor="#ff333333"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/textView399"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textView399" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="2dp"
+                android:text="@{viewModel.beanMsg.evaluateContent}"
+                android:textColor="#ff666666"
+                android:textSize="12sp"
+                app:layout_constraintStart_toEndOf="@+id/imageView99"
+                app:layout_constraintTop_toTopOf="@+id/guideline44" />
+
+            <View
+                android:layout_width="6dp"
+                android:layout_height="6dp"
+                android:background="@drawable/shape_red5"
+                android:visibility="@{viewModel.beanMsg.evaluateUnread == 1? View.VISIBLE : View.GONE}"
+                app:layout_constraintEnd_toEndOf="@+id/imageView99"
+                app:layout_constraintTop_toTopOf="@+id/imageView99" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{viewModel.click}"
+            android:paddingLeft="16dp"
+            android:paddingTop="12dp"
+            android:paddingRight="16dp"
+            android:paddingBottom="12dp">
+
+
+            <ImageView
+                android:id="@+id/imageView91"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:src="@mipmap/xx4_icon3"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline41"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <TextView
+                android:id="@+id/textView391"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginBottom="2dp"
+                android:text="投诉通知"
+                android:textColor="#ff333333"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toTopOf="@+id/guideline41"
+                app:layout_constraintStart_toEndOf="@+id/imageView91" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:text="@{viewModel.beanMsg.complaintTime}"
+                android:textColor="#ff333333"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/textView391"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textView391" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="2dp"
+                android:text="@{viewModel.beanMsg.complaintContent}"
+                android:textColor="#ff666666"
+                android:textSize="12sp"
+                app:layout_constraintStart_toEndOf="@+id/imageView91"
+                app:layout_constraintTop_toTopOf="@+id/guideline41" />
+
+            <View
+                android:layout_width="6dp"
+                android:layout_height="6dp"
+                android:background="@drawable/shape_red5"
+                android:visibility="@{viewModel.beanMsg.complaintUnread == 1? View.VISIBLE : View.GONE}"
+                app:layout_constraintEnd_toEndOf="@+id/imageView91"
+                app:layout_constraintTop_toTopOf="@+id/imageView91" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+</layout>
