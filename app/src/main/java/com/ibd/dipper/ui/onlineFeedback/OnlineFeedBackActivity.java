@@ -2,7 +2,6 @@ package com.ibd.dipper.ui.onlineFeedback;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -10,15 +9,15 @@ import androidx.recyclerview.widget.GridLayoutManager;
 
 import com.ibd.dipper.R;
 import com.ibd.dipper.databinding.ActivityOnlineFeedbackBinding;
-import com.ibd.dipper.ui.taskStatus.TaskStatusActivity;
 import com.ibd.dipper.uiPopupWindow.UploadPopupWindow;
 import com.ibd.dipper.utils.GlideEngine;
 import com.ibd.dipper.utils.UIUtils;
+import com.ibd.dipper.utils.Uri2FileTransformEngine;
 import com.leaf.library.StatusBarUtil;
-import com.luck.picture.lib.PictureSelector;
-import com.luck.picture.lib.config.PictureConfig;
-import com.luck.picture.lib.config.PictureMimeType;
+import com.luck.picture.lib.basic.PictureSelector;
+import com.luck.picture.lib.config.SelectMimeType;
 import com.luck.picture.lib.entity.LocalMedia;
+import com.luck.picture.lib.interfaces.OnResultCallbackListener;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 
 import java.io.File;
@@ -79,12 +78,22 @@ public class OnlineFeedBackActivity extends BaseActivity<ActivityOnlineFeedbackB
                     break;
                 case 1:
                     PictureSelector.create(OnlineFeedBackActivity.this)
-                            .openGallery(PictureMimeType.ofImage())
-                            .maxSelectNum(1)
-                            .isCamera(false)
-                            .loadImageEngine(GlideEngine.createGlideEngine())
-//                                    .setLanguage(finalLanguage)
-                            .forResult(PictureConfig.CHOOSE_REQUEST);
+                            .openGallery(SelectMimeType.ofImage())
+                            .setMaxSelectNum(1)
+                            .isDisplayCamera(false)
+                            .setImageEngine(GlideEngine.createGlideEngine())
+                            .setSandboxFileEngine(new Uri2FileTransformEngine())
+                            .forResult(new OnResultCallbackListener<>() {
+                                @Override
+                                public void onResult(ArrayList<LocalMedia> result) {
+                                    compressWithRx(result);
+                                }
+
+                                @Override
+                                public void onCancel() {
+
+                                }
+                            });
                     break;
             }
         });
@@ -98,27 +107,37 @@ public class OnlineFeedBackActivity extends BaseActivity<ActivityOnlineFeedbackB
                 .subscribe(aBoolean -> {
                     if (aBoolean) {
                         PictureSelector.create(this)
-                                .openCamera(PictureMimeType.ofImage())
-                                .loadImageEngine(GlideEngine.createGlideEngine()) // Please refer to the Demo GlideEngine.java
-                                .forResult(PictureConfig.REQUEST_CAMERA);
+                                .openCamera(SelectMimeType.ofImage())
+                                .setSandboxFileEngine(new Uri2FileTransformEngine()) // Please refer to the Demo GlideEngine.java
+                                .forResult(new OnResultCallbackListener<>() {
+                                    @Override
+                                    public void onResult(ArrayList<LocalMedia> result) {
+                                        compressWithRx(result);
+                                    }
+
+                                    @Override
+                                    public void onCancel() {
+
+                                    }
+                                });
                     } else {
                         ToastUtils.showShort("相机权限被拒绝，请到设置中打开！");
                     }
                 });
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (resultCode == RESULT_OK) {
-            compressWithRx(PictureSelector.obtainMultipleResult(data));
-        }
-    }
+//    @Override
+//    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+//        super.onActivityResult(requestCode, resultCode, data);
+//        if (resultCode == RESULT_OK) {
+//            compressWithRx(PictureSelector.obtainMultipleResult(data));
+//        }
+//    }
 
     private void compressWithRx(List<LocalMedia> selectList) {
         List<String> files = new ArrayList<>();
         for (LocalMedia localMedia : selectList) {
-            files.add(localMedia.getAndroidQToPath().isEmpty() ? localMedia.getPath() : localMedia.getAndroidQToPath());
+            files.add(localMedia.getAvailablePath());
         }
         ImageUtils.compressWithRx(files, new Observer() {
             @Override

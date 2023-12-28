@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<paths xmlns:android="http://schemas.android.com/apk/res/android">
-    <files-path
-        name="newApk"
-        path="/" /> #我是放在私有目录的files/newApk0下的，请根据自身要求修改
-</paths>
+<resources>
+    <paths>
+        <external-path path="Android/data/" name="files_root" />
+        <external-path path="." name="external_storage_root" />
+        <files-path
+            name="newApk"
+            path="/" /> #我是放在私有目录的files/newApk0下的，请根据自身要求修改
+    </paths>
+</resources>

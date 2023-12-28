@@ -3,17 +3,15 @@
 //apply plugin: 'org.greenrobot.greendao'//2018年10月30日09:15:15 添加
 buildscript {
     repositories {
-        maven { url 'https://maven.aliyun.com/nexus/content/groups/public/'}
-        maven { url'https://maven.aliyun.com/repository/public/' }
-        maven { url'https://maven.aliyun.com/repository/google/' }
-        maven { url'https://maven.aliyun.com/repository/jcenter/' }
-        maven { url'https://maven.aliyun.com/repository/central/' }
-//        jcenter()
         mavenCentral()
+        mavenLocal()
+        maven {
+            url 'https://repo1.maven.org/maven2/'
+        }
         google()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.2.2'
+        classpath 'com.android.tools.build:gradle:7.3.0'
         classpath 'org.greenrobot:greendao-gradle-plugin:3.3.0'//2018年10月30日09:15:15 添加
 //        classpath 'com.tencent.bugly:symtabfileuploader:latest.release'
 
@@ -24,15 +22,19 @@ buildscript {
 
 allprojects {
     repositories {
-        maven { url 'https://maven.aliyun.com/nexus/content/groups/public/'}
-        maven { url'https://maven.aliyun.com/repository/public/' }
-        maven { url'https://maven.aliyun.com/repository/google/' }
-        maven { url'https://maven.aliyun.com/repository/jcenter/' }
-        maven { url'https://maven.aliyun.com/repository/central/' }
-        google()
-//        jcenter()
-        mavenCentral()
+        maven {
+            url 'https://maven.aliyun.com/repository/google'
+        }
+        maven {
+            url 'https://repo1.maven.org/maven2/'
+        }
+        maven {
+            url 'https://maven.aliyun.com/repository/jcenter'
+        }
+//        maven { url "https://oss.jfrog.org/libs-snapshot" } //rxjava rxandroid
         maven { url 'https://jitpack.io' }
+        mavenCentral()
+        google()
     }
 }
 //signingConfigs {

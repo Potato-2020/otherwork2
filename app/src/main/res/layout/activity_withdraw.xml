@@ -102,7 +102,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
-                android:background="@color/picture_color_transparent"
+                android:background="@color/ps_color_transparent"
                 android:hint="请输入提现金额"
                 android:inputType="numberDecimal"
                 android:singleLine="true"

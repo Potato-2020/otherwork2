@@ -1,5 +1,9 @@
 package com.ibd.dipper.ui.mine;
 
+import static com.ibd.dipper.Config.TOKEN;
+import static com.ibd.dipper.Config.USER;
+import static com.ibd.dipper.utils.UIUtils.getPackageName;
+
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -15,21 +19,20 @@ import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.core.content.FileProvider;
 
-import androidx.lifecycle.ViewModel;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.ibd.dipper.R;
 import com.ibd.dipper.databinding.FragmentMineBinding;
 import com.ibd.dipper.net.RetrofitClient;
-import com.ibd.dipper.ui.carApprove.CarApproveActivity;
 import com.ibd.dipper.ui.setting.SettingActivity;
 import com.ibd.dipper.ui.setting.about.AboutActivity;
 import com.ibd.dipper.uiPopupWindow.CarPopupWindow;
 import com.ibd.dipper.uiPopupWindow.UploadPopupWindow;
 import com.ibd.dipper.utils.GlideEngine;
-import com.luck.picture.lib.PictureSelector;
-import com.luck.picture.lib.config.PictureConfig;
-import com.luck.picture.lib.config.PictureMimeType;
+import com.ibd.dipper.utils.Uri2FileTransformEngine;
+import com.luck.picture.lib.basic.PictureSelector;
+import com.luck.picture.lib.config.SelectMimeType;
 import com.luck.picture.lib.entity.LocalMedia;
+import com.luck.picture.lib.interfaces.OnResultCallbackListener;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 
 import java.io.File;
@@ -43,12 +46,6 @@ import me.goldze.mvvmhabit.utils.ImageUtils;
 import me.goldze.mvvmhabit.utils.KLog;
 import me.goldze.mvvmhabit.utils.SPUtils;
 import me.goldze.mvvmhabit.utils.ToastUtils;
-
-import static android.app.Activity.RESULT_OK;
-import static com.ibd.dipper.utils.UIUtils.getPackageName;
-
-import static com.ibd.dipper.Config.TOKEN;
-import static com.ibd.dipper.Config.USER;
 public class MineFragment extends BaseFragment<FragmentMineBinding, MineViewModel> {
 
     @Override
@@ -100,12 +97,22 @@ public class MineFragment extends BaseFragment<FragmentMineBinding, MineViewMode
                     break;
                 case 1:
                     PictureSelector.create(MineFragment.this)
-                            .openGallery(PictureMimeType.ofImage())
-                            .maxSelectNum(1)
-                            .isCamera(false)
-                            .loadImageEngine(GlideEngine.createGlideEngine())
-//                                    .setLanguage(finalLanguage)
-                            .forResult(PictureConfig.CHOOSE_REQUEST);
+                            .openGallery(SelectMimeType.ofImage())
+                            .setMaxSelectNum(1)
+                            .isDisplayCamera(false)
+                            .setImageEngine(GlideEngine.createGlideEngine())
+                            .setSandboxFileEngine(new Uri2FileTransformEngine())
+                            .forResult(new OnResultCallbackListener<>() {
+                                @Override
+                                public void onResult(ArrayList<LocalMedia> result) {
+                                    compressWithRx(result);
+                                }
+
+                                @Override
+                                public void onCancel() {
+
+                                }
+                            });
                     break;
             }
         });
@@ -186,9 +193,19 @@ public class MineFragment extends BaseFragment<FragmentMineBinding, MineViewMode
                 .subscribe(aBoolean -> {
                     if (aBoolean) {
                         PictureSelector.create(MineFragment.this)
-                                .openCamera(PictureMimeType.ofImage())
-                                .loadImageEngine(GlideEngine.createGlideEngine()) // Please refer to the Demo GlideEngine.java
-                                .forResult(PictureConfig.REQUEST_CAMERA);
+                                .openCamera(SelectMimeType.ofImage())
+                                .setSandboxFileEngine(new Uri2FileTransformEngine()) // Please refer to the Demo GlideEngine.java
+                                .forResult(new OnResultCallbackListener<>() {
+                                    @Override
+                                    public void onResult(ArrayList<LocalMedia> result) {
+                                        compressWithRx(result);
+                                    }
+
+                                    @Override
+                                    public void onCancel() {
+
+                                    }
+                                });
                     } else {
                         ToastUtils.showShort("相机权限被拒绝，请到设置中打开！");
                     }
@@ -202,15 +219,15 @@ public class MineFragment extends BaseFragment<FragmentMineBinding, MineViewMode
 
         if (requestCode == 200 & resultCode == 201)
             getActivity().finish();
-        if (resultCode == RESULT_OK & viewModel.isVisibleToUser.getValue()) {
-            compressWithRx(PictureSelector.obtainMultipleResult(data));
-        }
+//        if (resultCode == RESULT_OK & viewModel.isVisibleToUser.getValue()) {
+//            compressWithRx(PictureSelector.obtainMultipleResult(data));
+//        }
     }
 
     private void compressWithRx(List<LocalMedia> selectList) {
         List<String> files = new ArrayList<>();
         for (LocalMedia localMedia : selectList) {
-            files.add(localMedia.getAndroidQToPath().isEmpty() ? localMedia.getPath() : localMedia.getAndroidQToPath());
+            files.add(localMedia.getAvailablePath());
         }
         ImageUtils.compressWithRx(files, new Observer() {
             @Override

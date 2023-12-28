@@ -263,7 +263,7 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:background="@color/picture_color_transparent"
+                        android:background="@color/ps_color_transparent"
                         android:gravity="center_vertical|right"
                         android:hint="请选择能源类型"
                         android:text="@{viewModel.energyTypeStr}"
@@ -306,7 +306,7 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:background="@color/picture_color_transparent"
+                        android:background="@color/ps_color_transparent"
                         android:gravity="center_vertical|right"
                         android:hint="请选择牌照颜色"
                         android:text="@{viewModel.licensePlateColorStr}"
@@ -349,7 +349,7 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:background="@color/picture_color_transparent"
+                        android:background="@color/ps_color_transparent"
                         android:gravity="center_vertical|right"
                         android:hint="请选择牌照类型"
                         android:text="@{viewModel.licensePlateTypeStr}"
@@ -392,7 +392,7 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:background="@color/picture_color_transparent"
+                        android:background="@color/ps_color_transparent"
                         android:enabled="@{viewModel.beTralierClickable}"
                         android:gravity="center_vertical|right"
                         android:maxLength="20"
@@ -439,7 +439,7 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:background="@color/picture_color_transparent"
+                        android:background="@color/ps_color_transparent"
                         android:enabled="@{viewModel.beTralierClickable}"
                         android:gravity="center_vertical|right"
                         android:hint="请输入车辆载重"
@@ -487,7 +487,7 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:background="@color/picture_color_transparent"
+                        android:background="@color/ps_color_transparent"
                         android:enabled="@{viewModel.beTralierClickable}"
                         android:gravity="center_vertical|right"
                         android:hint="请输入道路运输证号码"
@@ -534,7 +534,7 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:background="@color/picture_color_transparent"
+                        android:background="@color/ps_color_transparent"
                         android:enabled="@{viewModel.beTralierClickable}"
                         android:gravity="center_vertical|right"
                         android:hint="请输入档案编号"
@@ -581,7 +581,7 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:background="@color/picture_color_transparent"
+                        android:background="@color/ps_color_transparent"
                         android:enabled="@{viewModel.beTralierClickable}"
                         android:gravity="center_vertical|right"
                         android:hint="请输入车辆总质量"
@@ -629,7 +629,7 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:background="@color/picture_color_transparent"
+                        android:background="@color/ps_color_transparent"
                         android:enabled="@{viewModel.beTralierClickable}"
                         android:gravity="center_vertical|right"
                         android:hint="请输入车辆核定载质量"
@@ -677,7 +677,7 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:background="@color/picture_color_transparent"
+                        android:background="@color/ps_color_transparent"
                         android:enabled="@{viewModel.beTralierClickable}"
                         android:gravity="center_vertical|right"
                         android:hint="请输入车长"
@@ -725,7 +725,7 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:background="@color/picture_color_transparent"
+                        android:background="@color/ps_color_transparent"
                         android:enabled="@{viewModel.beTralierClickable}"
                         android:gravity="center_vertical|right"
                         android:hint="请输入车宽"
@@ -773,7 +773,7 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:background="@color/picture_color_transparent"
+                        android:background="@color/ps_color_transparent"
                         android:enabled="@{viewModel.beTralierClickable}"
                         android:gravity="center_vertical|right"
                         android:hint="请输入车高"
@@ -822,7 +822,7 @@
 <!--                        android:layout_width="0dp"-->
 <!--                        android:layout_height="match_parent"-->
 <!--                        android:layout_weight="1"-->
-<!--                        android:background="@color/picture_color_transparent"-->
+<!--                        android:background="@color/ps_color_transparent"-->
 <!--                        android:gravity="center_vertical|right"-->
 <!--                        android:hint="请选择车辆类型"-->
 <!--                        android:text="@{viewModel.vehicleTypeStr}"-->
@@ -856,7 +856,7 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:dropDownWidth="280dp"
-                            android:background="@color/picture_color_transparent"
+                            android:background="@color/ps_color_transparent"
                             android:gravity="center_vertical|right"
                             android:singleLine="true"
                             android:hint="请输入文字进行搜索"
@@ -1034,7 +1034,7 @@
 <!--                        android:layout_width="0dp"-->
 <!--                        android:layout_height="match_parent"-->
 <!--                        android:layout_weight="1"-->
-<!--                        android:background="@color/picture_color_transparent"-->
+<!--                        android:background="@color/ps_color_transparent"-->
 <!--                        android:gravity="center_vertical|right"-->
 <!--                        android:hint="请输入挂车牌照号码"-->
 <!--                        android:inputType="textEmailAddress"-->
@@ -1081,7 +1081,7 @@
 <!--                        android:layout_width="0dp"-->
 <!--                        android:layout_height="match_parent"-->
 <!--                        android:layout_weight="1"-->
-<!--                        android:background="@color/picture_color_transparent"-->
+<!--                        android:background="@color/ps_color_transparent"-->
 <!--                        android:gravity="center_vertical|right"-->
 <!--                        android:hint="请输入挂车载重量"-->
 <!--                        android:inputType="numberDecimal"-->
@@ -1129,7 +1129,7 @@
 <!--                        android:layout_width="0dp"-->
 <!--                        android:layout_height="match_parent"-->
 <!--                        android:layout_weight="1"-->
-<!--                        android:background="@color/picture_color_transparent"-->
+<!--                        android:background="@color/ps_color_transparent"-->
 <!--                        android:gravity="center_vertical|right"-->
 <!--                        android:hint="请输入挂车长度"-->
 <!--                        android:inputType="numberDecimal"-->
@@ -1177,7 +1177,7 @@
 <!--                        android:layout_width="0dp"-->
 <!--                        android:layout_height="match_parent"-->
 <!--                        android:layout_weight="1"-->
-<!--                        android:background="@color/picture_color_transparent"-->
+<!--                        android:background="@color/ps_color_transparent"-->
 <!--                        android:gravity="center_vertical|right"-->
 <!--                        android:hint="请输入挂车宽度"-->
 <!--                        android:inputType="numberDecimal"-->
@@ -1225,7 +1225,7 @@
 <!--                        android:layout_width="0dp"-->
 <!--                        android:layout_height="match_parent"-->
 <!--                        android:layout_weight="1"-->
-<!--                        android:background="@color/picture_color_transparent"-->
+<!--                        android:background="@color/ps_color_transparent"-->
 <!--                        android:gravity="center_vertical|right"-->
 <!--                        android:hint="请输入挂车高度"-->
 <!--                        android:inputType="numberDecimal"-->
@@ -1273,7 +1273,7 @@
 <!--                        android:layout_width="0dp"-->
 <!--                        android:layout_height="match_parent"-->
 <!--                        android:layout_weight="1"-->
-<!--                        android:background="@color/picture_color_transparent"-->
+<!--                        android:background="@color/ps_color_transparent"-->
 <!--                        android:gravity="center_vertical|right"-->
 <!--                        android:hint="请输入挂车总质量"-->
 <!--                        android:inputType="numberDecimal"-->

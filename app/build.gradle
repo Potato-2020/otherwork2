@@ -47,7 +47,7 @@ dependencies {
     //BasePopup
     implementation 'com.github.razerdp:BasePopup:2.2.2'
     //PictureSelector
-    implementation 'com.github.LuckSiege.PictureSelector:picture_library:v2.5.8'
+    implementation 'io.github.lucksiege:pictureselector:v3.11.1'
     //BottomNavigationViewEx 底部切换卡
     implementation 'com.github.ittianyu:BottomNavigationViewEx:2.0.4'
     implementation 'com.google.android.material:material:1.0.0'

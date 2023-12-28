@@ -51,7 +51,7 @@
                         android:id="@+id/editText"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="@color/picture_color_transparent"
+                        android:background="@color/ps_color_transparent"
                         android:gravity="left"
                         android:hint="请输入6-200字的反馈内容"
                         android:inputType="textMultiLine"

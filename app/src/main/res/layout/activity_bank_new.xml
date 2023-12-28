@@ -101,7 +101,7 @@
                         android:layout_weight="1"
                         android:layout_marginLeft="24dp"
                         android:dropDownWidth="280dp"
-                        android:background="@color/picture_color_transparent"
+                        android:background="@color/ps_color_transparent"
                         android:gravity="center_vertical|right"
                         android:singleLine="true"
                         android:hint="请选择开户行"
@@ -149,7 +149,7 @@
 <!--                    android:layout_width="0dp"-->
 <!--                    android:layout_height="match_parent"-->
 <!--                    android:layout_weight="1"-->
-<!--                    android:background="@color/picture_color_transparent"-->
+<!--                    android:background="@color/ps_color_transparent"-->
 <!--                    android:gravity="center_vertical|right"-->
 <!--                    android:hint="请选择开户行城市"-->
 <!--                    android:text="@{viewModel.cityName}"-->
@@ -202,7 +202,7 @@
                 <!--                        android:layout_width="0dp"-->
                 <!--                        android:layout_height="match_parent"-->
                 <!--                        android:layout_weight="1"-->
-                <!--                        android:background="@color/picture_color_transparent"-->
+                <!--                        android:background="@color/ps_color_transparent"-->
                 <!--                        android:gravity="center_vertical|right"-->
                 <!--                        android:hint="请选择开户行城市"-->
                 <!--                        android:text="@{viewModel.cityName}"-->
@@ -215,7 +215,7 @@
                     android:layout_height="match_parent"
                     android:layout_marginLeft="24dp"
                     android:layout_weight="1"
-                    android:background="@color/picture_color_transparent"
+                    android:background="@color/ps_color_transparent"
                     android:completionHint=""
                     android:completionThreshold="1"
                     android:dropDownWidth="280dp"
@@ -273,7 +273,7 @@
                     android:layout_height="match_parent"
                     android:layout_marginLeft="24dp"
                     android:layout_marginRight="24dp"
-                    android:background="@color/picture_color_transparent"
+                    android:background="@color/ps_color_transparent"
                     android:gravity="center_vertical"
                     android:maxLength="11"
                     android:hint="请输入手机号码"
@@ -318,7 +318,7 @@
                     android:layout_height="match_parent"
                     android:layout_marginLeft="24dp"
                     android:layout_marginRight="24dp"
-                    android:background="@color/picture_color_transparent"
+                    android:background="@color/ps_color_transparent"
                     android:gravity="center_vertical"
                     android:maxLength="32"
                     android:hint="请输入银行储蓄卡卡号"

@@ -86,7 +86,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@color/picture_color_transparent"
+                    android:background="@color/ps_color_transparent"
                     android:gravity="center_vertical"
                     android:hint="请输入关键词搜索"
                     android:imeOptions="actionSearch"

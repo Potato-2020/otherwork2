@@ -2,21 +2,27 @@ package com.ibd.dipper.ui.carApprove;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
-import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.*;
+import android.widget.AbsoluteLayout;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.TableLayout;
+import android.widget.TextView;
 
 import com.bigkoo.pickerview.builder.OptionsPickerBuilder;
 import com.bigkoo.pickerview.view.OptionsPickerView;
@@ -33,21 +39,15 @@ import com.ibd.dipper.utils.GlideEngine;
 import com.ibd.dipper.utils.JsonUtils;
 import com.ibd.dipper.utils.NetworkUtil;
 import com.ibd.dipper.utils.UIUtils;
+import com.ibd.dipper.utils.Uri2FileTransformEngine;
 import com.leaf.library.StatusBarUtil;
-import com.luck.picture.lib.PictureSelector;
-import com.luck.picture.lib.config.PictureConfig;
-import com.luck.picture.lib.config.PictureMimeType;
+import com.luck.picture.lib.basic.PictureSelector;
+import com.luck.picture.lib.config.SelectMimeType;
 import com.luck.picture.lib.entity.LocalMedia;
+import com.luck.picture.lib.interfaces.OnResultCallbackListener;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 
-import java.io.BufferedInputStream;
 import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.ProtocolException;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -656,12 +656,22 @@ public class CarApproveActivity extends BaseActivity<ActivityCarApproveBinding, 
                     break;
                 case 1:
                     PictureSelector.create(CarApproveActivity.this)
-                            .openGallery(PictureMimeType.ofImage())
-                            .maxSelectNum(1)
-                            .isCamera(false)
-                            .loadImageEngine(GlideEngine.createGlideEngine())
-//                                    .setLanguage(finalLanguage)
-                            .forResult(PictureConfig.CHOOSE_REQUEST);
+                            .openGallery(SelectMimeType.ofImage())
+                            .setMaxSelectNum(1)
+                            .isDisplayCamera(false)
+                            .setImageEngine(GlideEngine.createGlideEngine())
+                            .setSandboxFileEngine(new Uri2FileTransformEngine())
+                            .forResult(new OnResultCallbackListener<>() {
+                                @Override
+                                public void onResult(ArrayList<LocalMedia> result) {
+                                    compressWithRx(result);
+                                }
+
+                                @Override
+                                public void onCancel() {
+
+                                }
+                            });
                     break;
             }
         });
@@ -804,27 +814,37 @@ public class CarApproveActivity extends BaseActivity<ActivityCarApproveBinding, 
                 .subscribe(aBoolean -> {
                     if (aBoolean) {
                         PictureSelector.create(this)
-                                .openCamera(PictureMimeType.ofImage())
-                                .loadImageEngine(GlideEngine.createGlideEngine()) // Please refer to the Demo GlideEngine.java
-                                .forResult(PictureConfig.REQUEST_CAMERA);
+                                .openCamera(SelectMimeType.ofImage())
+                                .setSandboxFileEngine(new Uri2FileTransformEngine())
+                                .forResult(new OnResultCallbackListener<LocalMedia>() {
+                                    @Override
+                                    public void onResult(ArrayList<LocalMedia> result) {
+                                        compressWithRx(result);
+                                    }
+
+                                    @Override
+                                    public void onCancel() {
+
+                                    }
+                                });
                     } else {
                         ToastUtils.showShort("相机权限被拒绝，请到设置中打开！");
                     }
                 });
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (resultCode == RESULT_OK) {
-            compressWithRx(PictureSelector.obtainMultipleResult(data));
-        }
-    }
+//    @Override
+//    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+//        super.onActivityResult(requestCode, resultCode, data);
+//        if (resultCode == RESULT_OK) {
+//            compressWithRx(PictureSelector.obtainMultipleResult(data));
+//        }
+//    }
 
     private void compressWithRx(List<LocalMedia> selectList) {
         List<String> files = new ArrayList<>();
         for (LocalMedia localMedia : selectList) {
-            files.add(localMedia.getAndroidQToPath()==null || localMedia.getAndroidQToPath().isEmpty() ? localMedia.getPath() : localMedia.getAndroidQToPath());
+            files.add(localMedia.getAvailablePath());
         }
         ImageUtils.compressWithRx(files, new Observer() {
             @Override

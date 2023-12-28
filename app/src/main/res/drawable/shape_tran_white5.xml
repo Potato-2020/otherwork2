@@ -6,8 +6,8 @@
     <!-- 填充的颜色 -->
     <gradient
         android:angle="0"
-        android:endColor="@color/picture_color_transparent"
-        android:startColor="@color/picture_color_transparent" />
+        android:endColor="@color/ps_color_transparent"
+        android:startColor="@color/ps_color_transparent" />
 
     <!-- 边框的颜色和粗细 -->
     <stroke

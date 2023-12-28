@@ -38,7 +38,7 @@
                 android:id="@+id/et_content"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/picture_color_transparent"
+                android:background="@color/ps_color_transparent"
                 android:gravity="top"
                 android:maxLength="250"
                 android:padding="8dp"
